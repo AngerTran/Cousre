@@ -1,0 +1,13 @@
+name: SonarCloud Analysis
+on: [push, pull_request]
+jobs:
+  sonarcloud:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarqube-scan-action@v4
+      env:
+        SONAR_TOKEN: ${1c41015d7a675e720faf33f08aa6333bbedfde1f}
+        SONAR_HOST_URL: https://sonarcloud.io
+        SONAR_PROJECT_KEY: Course
